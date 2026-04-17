@@ -1,0 +1,87 @@
+Project commands for QAlytics
+
+Go to project root
+Windows:
+cd "D:\Shreya\qalytics-project\qalytics-project"
+
+Linux:
+cd "/path/to/qalytics-project"
+
+Create local environment file
+Windows:
+copy .env.example .env
+
+Linux:
+cp .env.example .env
+
+Create virtual environment
+Windows:
+python -m venv .venv
+
+Linux:
+python3 -m venv .venv
+
+Activate virtual environment
+Windows:
+.venv\Scripts\activate
+
+Linux:
+source .venv/bin/activate
+
+Install dependencies
+Windows:
+pip install -r backend/requirements.txt
+
+Linux:
+pip install -r backend/requirements.txt
+
+Seed the database
+Windows:
+python -m backend.seed
+
+Linux:
+python3 -m backend.seed
+
+Start the API server
+Windows:
+uvicorn backend.main:app --reload --port 8000
+
+Linux:
+uvicorn backend.main:app --reload --port 8000
+
+Serve the frontend
+Windows:
+python -m http.server 3000 --directory frontend
+
+Linux:
+python3 -m http.server 3000 --directory frontend
+
+Apply Alembic migrations
+Windows:
+alembic upgrade head
+
+Linux:
+alembic upgrade head
+
+Run all automation tests
+Windows:
+pytest automation/ -v --alluredir=reports/allure-results/
+
+Linux:
+pytest automation/ -v --alluredir=reports/allure-results/
+
+Run smoke tests only
+Windows:
+pytest automation/ -m smoke -v --alluredir=reports/allure-results/
+
+Linux:
+pytest automation/ -m smoke -v --alluredir=reports/allure-results/
+
+Generate Allure report
+Windows:
+pytest automation/ --alluredir=reports/allure-results/
+allure generate reports/allure-results/ -o reports/allure-report/ --clean
+
+Linux:
+pytest automation/ --alluredir=reports/allure-results/
+allure generate reports/allure-results/ -o reports/allure-report/ --clean
