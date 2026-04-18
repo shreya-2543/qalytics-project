@@ -36,7 +36,7 @@
 
 ```bash
 # 1. Go to the project root
-cd "D:\Shreya\qalytics-project"
+cd "D:\project\qalytics-project"
 
 # 2. Create your environment file
 copy .env.example .env        # Windows
